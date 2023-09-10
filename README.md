@@ -3,6 +3,8 @@
 ### Задание 1
 Выведите на консоль минимальные и максимальные значения для предопределенных типов данных CTS.
 
+
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +42,7 @@ namespace lesson
         }
     }
 }
-
+```
 
 ![image](https://github.com/lepeha81/2lab/blob/main/13.PNG)
 
@@ -51,7 +53,7 @@ namespace lesson
 Создайте два private метода, вычисляющие площадь прямоугольника - double CalculateArea() и периметр прямоугольника - double CalculatePerimeter ().
 Создайте два свойства double Area и double Perimeter с одним методом доступа get, вызывающим созданные ранее методы.
 Напишите программу, которая принимает от пользователя длины двух сторон прямоугольника и выводит на экран периметр и площадь. Покройте тестами методы класса Rectangle.
-
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,4 +109,5 @@ namespace lesson
         }
     }
 }
+```
 
