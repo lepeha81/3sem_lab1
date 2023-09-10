@@ -44,7 +44,7 @@ namespace lesson
 }
 ```
 
-![image](https://github.com/lepeha81/2lab/blob/main/13.PNG)
+![image]([https://github.com/lepeha81/2lab/blob/main/13.PNG](https://github.com/lepeha81/3sem_lab1/blob/main/1.PNG))
 
 ### Задание 2
 Создайте класс с именем Rectangle.
@@ -110,7 +110,7 @@ namespace lesson
     }
 }
 ```
-![image](https://github.com/lepeha81/2lab/blob/main/13.PNG)
+![image]([https://github.com/lepeha81/2lab/blob/main/13.PNG](https://github.com/lepeha81/3sem_lab1/blob/main/2.PNG))
 
 ### Задание 3
 Создайте классы Point и Figure.
@@ -222,4 +222,4 @@ class Program
 }
 
 ```
-![image](https://github.com/lepeha81/2lab/blob/main/13.PNG)
+![image]([https://github.com/lepeha81/2lab/blob/main/13.PNG](https://github.com/lepeha81/3sem_lab1/blob/main/3.PNG))
