@@ -110,4 +110,116 @@ namespace lesson
     }
 }
 ```
+![image](https://github.com/lepeha81/2lab/blob/main/13.PNG)
 
+### Задание 3
+Создайте классы Point и Figure.
+Класс Point должен содержать два целочисленных поля с координатами точки.
+Создайте два свойства с одним методом доступа get.
+Создайте пользовательский конструктор, в теле которого проинициализируйте поля значениями аргументов.
+Класс Figure должен содержать конструкторы, которые принимают от 3-х до 5-ти аргументов типа Point, а также строковое автосвойство для хранения названия фигуры.
+Создайте два метода: double LengthSide(Point A, Point B), который рассчитывает длину стороны многоугольника; void PerimeterCalculator(), который рассчитывает периметр многоугольника.
+Напишите программу, которая выводит на экран название и периметр многоугольника. Покройте тестами методы класса Figure.
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class Point
+{
+    private int x;
+    private int y;
+
+    public Point(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int X
+    {
+        get { return x; }
+    }
+
+    public int Y
+    {
+        get { return y; }
+    }
+}
+
+class Figure
+{
+    private Point[] points;//массив координат точек
+    private string name;
+
+    public Figure(Point p1, Point p2, Point p3)
+    {
+        points = new Point[3];
+        points[0] = p1;
+        points[1] = p2;
+        points[2] = p3;
+    }
+
+    public Figure(Point p1, Point p2, Point p3, Point p4)
+    {
+        points = new Point[4];
+        points[0] = p1;
+        points[1] = p2;
+        points[2] = p3;
+        points[3] = p4;
+    }
+
+    public Figure(Point p1, Point p2, Point p3, Point p4, Point p5)
+    {
+        points = new Point[5];
+        points[0] = p1;
+        points[1] = p2;
+        points[2] = p3;
+        points[3] = p4;
+        points[4] = p5;
+    }
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public double LengthSide(Point A, Point B)
+    {
+        int xDiff = A.X - B.X;
+        int yDiff = A.Y - B.Y;
+        return Math.Sqrt(xDiff * xDiff + yDiff * yDiff);
+    }
+
+    public void PerimeterCalculator()
+    {
+        double perimeter = 0;
+        for (int i = 0; i < points.Length - 1; i++)
+        {
+            perimeter += LengthSide(points[i], points[i + 1]);
+        }
+        perimeter += LengthSide(points[points.Length - 1], points[0]);
+        Console.WriteLine("Название фигуры: {0}", name);
+        Console.WriteLine("Периметр фигуры: {0}", perimeter);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Point p1 = new Point(0, 0);
+        Point p2 = new Point(0, 2);
+        Point p3 = new Point(2, 0);
+
+        Figure triangle = new Figure(p1, p2, p3);
+        triangle.Name = "Треугольник";
+        triangle.PerimeterCalculator();
+    }
+}
+
+```
+![image](https://github.com/lepeha81/2lab/blob/main/13.PNG)
