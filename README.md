@@ -45,44 +45,7 @@ namespace lesson
 ```
 
 ![image]([https://github.com/lepeha81/2lab/blob/main/13.PNG](https://github.com/lepeha81/3sem_lab1/blob/main/1.PNG))
-Unit test
-```
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using AD;
-using System.Security.Policy;
 
-namespace AD.Tests
-{
-    [TestClass]
-    public class RectangleTests
-    {
-        [TestMethod]
-        public void CalculateAreaTest()
-        {
-            int side1 = 3;
-            int side2 = 4;
-            Rectangle rectangle = new Rectangle(side1, side2);
-            double area = rectangle.Area;
-
-            Assert.AreEqual(12, area, 0.001);
-
-        }
-
-        [TestMethod]
-        public void CalculatePerimetrTest()
-        {
-            int side1 = 3;
-            int side2 = 4;
-            Rectangle rectangle = new Rectangle(side1, side2);
-            double perimetr = rectangle.Perimeter;
-
-            Assert.AreEqual(14, perimetr, 0.001);
-
-        }
-    }
-}
-```
 ### Задание 2
 Создайте класс с именем Rectangle.
 В теле класса создайте два поля, описывающие длины сторон double side1, side2.
@@ -149,6 +112,44 @@ namespace lesson
 ```
 ![image]([https://github.com/lepeha81/2lab/blob/main/13.PNG](https://github.com/lepeha81/3sem_lab1/blob/main/2.PNG))
 
+Unit test
+```
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using AD;
+using System.Security.Policy;
+
+namespace AD.Tests
+{
+    [TestClass]
+    public class RectangleTests
+    {
+        [TestMethod]
+        public void CalculateAreaTest()
+        {
+            int side1 = 3;
+            int side2 = 4;
+            Rectangle rectangle = new Rectangle(side1, side2);
+            double area = rectangle.Area;
+
+            Assert.AreEqual(12, area, 0.001);
+
+        }
+
+        [TestMethod]
+        public void CalculatePerimetrTest()
+        {
+            int side1 = 3;
+            int side2 = 4;
+            Rectangle rectangle = new Rectangle(side1, side2);
+            double perimetr = rectangle.Perimeter;
+
+            Assert.AreEqual(14, perimetr, 0.001);
+
+        }
+    }
+}
+```
 ### Задание 3
 Создайте классы Point и Figure.
 Класс Point должен содержать два целочисленных поля с координатами точки.
@@ -260,6 +261,7 @@ class Program
 
 ```
 ![image]([https://github.com/lepeha81/2lab/blob/main/13.PNG](https://github.com/lepeha81/3sem_lab1/blob/main/3.PNG))
+
 Unit test
 ```
 using Microsoft.VisualStudio.TestTools.UnitTesting;
