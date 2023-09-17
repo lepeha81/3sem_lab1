@@ -45,7 +45,44 @@ namespace lesson
 ```
 
 ![image]([https://github.com/lepeha81/2lab/blob/main/13.PNG](https://github.com/lepeha81/3sem_lab1/blob/main/1.PNG))
+Unit test
+```
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using AD;
+using System.Security.Policy;
 
+namespace AD.Tests
+{
+    [TestClass]
+    public class RectangleTests
+    {
+        [TestMethod]
+        public void CalculateAreaTest()
+        {
+            int side1 = 3;
+            int side2 = 4;
+            Rectangle rectangle = new Rectangle(side1, side2);
+            double area = rectangle.Area;
+
+            Assert.AreEqual(12, area, 0.001);
+
+        }
+
+        [TestMethod]
+        public void CalculatePerimetrTest()
+        {
+            int side1 = 3;
+            int side2 = 4;
+            Rectangle rectangle = new Rectangle(side1, side2);
+            double perimetr = rectangle.Perimeter;
+
+            Assert.AreEqual(14, perimetr, 0.001);
+
+        }
+    }
+}
+```
 ### Задание 2
 Создайте класс с именем Rectangle.
 В теле класса создайте два поля, описывающие длины сторон double side1, side2.
@@ -223,3 +260,77 @@ class Program
 
 ```
 ![image]([https://github.com/lepeha81/2lab/blob/main/13.PNG](https://github.com/lepeha81/3sem_lab1/blob/main/3.PNG))
+Unit test
+```
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using Lesson;
+
+namespace Lesson.Tests
+{
+    [TestClass]
+    public class PointTests
+    {
+        [TestMethod]
+        public void Point_Constructor_SetsXAndY()
+        {
+            int x = 3;
+            int y = 4;
+
+            Point point = new Point(x, y);
+
+            Assert.AreEqual(x, point.X);/*Проверяет, равны ли указанные объекты, и создает исключение если 
+два объекта не равны. Обрабатываются различные числовые типы как неравные, даже если логические значения равны.*/
+            Assert.AreEqual(y, point.Y);
+        }
+    }
+    [TestClass]
+    public class FigureTests
+    {
+        [TestMethod]
+        public void Figure_LengthSide_CalculatesCorrectLength()
+        {
+            Point A = new Point(0, 0);
+            Point B = new Point(0, 3);
+            Figure figure = new Figure(A, B);
+
+            double length = figure.LengthSide(A, B);
+
+            Assert.AreEqual(3.0, length, 0.001);//проверка с погрешностью
+        }
+
+        [TestMethod]
+        public void Figure_PerimeterCalculator_CalculatesCorrectPerimeter()
+        {
+            Point p1 = new Point(0, 0);
+            Point p2 = new Point(0, 1);
+            Point p3 = new Point(1, 1);
+            Point p4 = new Point(1, 0);
+
+            Figure square = new Figure(p1, p2, p3, p4)
+            {
+                Name = "square",
+            };
+            //square.PerimeterCalculator();
+
+            Assert.AreEqual(4.0, square.PerimeterCalculator(), 0.001);
+        }
+
+        [TestMethod]
+        public void Figure_PerimeterCalculator_WithNullPoints()
+        {
+            Point p1 = new Point(0, 0);
+            Point p2 = new Point(0, 2);
+            Point p3 = new Point(2, 0);
+
+            Figure triangle = new Figure(p1, p2, p3)
+            {
+                Name = "triangle",
+            };
+            //triangle.PerimeterCalculator();
+
+            Assert.AreEqual(6.828, triangle.PerimeterCalculator(), 0.001);
+        }
+    }
+}
+```
